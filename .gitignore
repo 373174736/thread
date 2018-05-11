@@ -83,3 +83,10 @@ fabric.properties
 *.iml
 out
 gen
+.gitignore
+src/main/java/com/lizl/thread/t14/
+target/classes/com/lizl/thread/t12/
+target/classes/com/lizl/thread/t13/
+target/classes/com/lizl/thread/t14/
+target/generated-sources/
+target/generated-test-sources/
