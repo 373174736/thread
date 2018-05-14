@@ -17,6 +17,14 @@ public class Demo {
 
     public void metting(CyclicBarrier cyclicBarrier){
         System.out.println(Thread.currentThread().getName() + " 线程 到达会议室等待开会。。。");
+        if(Thread.currentThread().getName().equals("Thread-7")){
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            cyclicBarrier.reset();
+        }
         try {
             cyclicBarrier.await();
         } catch (InterruptedException e) {
@@ -35,7 +43,6 @@ public class Demo {
                 System.out.println("所有人已经到达，会议即将开始。。。");
             }
         });
-
         for(int i=0 ;i<20 ;i ++){
             new Thread(new Runnable() {
                 @Override
@@ -45,6 +52,20 @@ public class Demo {
             }).start();
         }
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println("当前等待线程个数为:" + cyclicBarrier.getNumberWaiting());
+                    System.out.println(cyclicBarrier.isBroken());
+                }
+            }
+        }).start();
 
     }
 
