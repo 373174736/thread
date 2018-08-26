@@ -2,14 +2,14 @@ package com.lizl.data_structure;
 
 public class treeDemo {
     public static void main(String[] args) {
-        Node root = new Node("root-1");
+        Node root = new Node("A");
 
-        Node l11 = new Node("1-1");
-        Node l12 = new Node("1-2");
-        Node l21 = new Node("2-1");
-        Node l22 = new Node("2-2");
-        Node l23 = new Node("2-3");
-        Node l24 = new Node("2-4");
+        Node l11 = new Node("B");
+        Node l12 = new Node("C");
+        Node l21 = new Node("D");
+        Node l22 = new Node("E");
+        Node l23 = new Node("F");
+        Node l24 = new Node("G");
 
         root.setLeft(l11);
         root.setRight(l12);
