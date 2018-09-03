@@ -1,6 +1,7 @@
 package com.lizl.suanfa;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @author lizl
@@ -10,7 +11,7 @@ public class QuickSort {
     private static void quickSort(int a[], int low, int high){
         int pivot;
         if(low < high){
-            pivot = partition1(a, low, high);
+            pivot = partitionRandom(a, low, high);
             quickSort(a,low ,pivot -1);
             quickSort(a,pivot+1, high);
         }
@@ -50,6 +51,22 @@ public class QuickSort {
         swap(a,i,high);
         return i;
     }
+
+    /**
+     * 快速排序 随机抽样优化版本
+     * @param a
+     * @param low
+     * @param high
+     * @return
+     */
+    private static int partitionRandom(int a[],int low, int high){
+        Random random = new Random();
+        int i = random.nextInt(a.length);
+        swap(a,high,i);
+        return partition1(a, low,high);
+    }
+
+
 
     private static void swap(int[] a,int low, int high){
         int tmp ;
