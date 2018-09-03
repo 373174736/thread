@@ -1,6 +1,5 @@
 package com.lizl.suanfa;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
@@ -47,7 +46,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int a[] = {7,3,5,6,4,2,9,1};
+        int a[] = {7,3,5,6};
         int tmp[] = new int[a.length];
         sort(a,0,a.length-1,tmp);
         System.out.println(Arrays.toString(a));
