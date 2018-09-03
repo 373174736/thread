@@ -40,14 +40,15 @@ public class QuickSort {
     private static int partition1(int a[],int low, int high){
         int x = a[high];
         int i= low;
+        // 
         for(int j=low;j<high;j++){
             if(a[j]<= x){
-                i++;
                 swap(a,i,j);
+                i++;
             }
-            swap(a,i+1,high);
         }
-        return i+1;
+        swap(a,i,high);
+        return i;
     }
 
     private static void swap(int[] a,int low, int high){
@@ -59,6 +60,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
+//        int[] a = {50,10,20};
         int[] a = {50,10,90,30,70,40,80,60,20};
 
         quickSort(a,0,a.length -1);
