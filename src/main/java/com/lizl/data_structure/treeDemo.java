@@ -1,5 +1,8 @@
 package com.lizl.data_structure;
 
+/**
+ * 普通树的递归遍历
+ */
 public class treeDemo {
     public static void main(String[] args) {
         Node root = new Node("A");

@@ -33,7 +33,7 @@ public class CountIngSort {
 
 
     public static void main(String[] args) {
-        int[] a = {50,10,90,30,70,40,80,60,20};
+        int[] a = {50,10,90,30,70,40,80,60,20,80};
         countIngSort(a, 91);
     }
 }
